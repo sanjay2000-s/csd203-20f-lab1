@@ -1,3 +1,15 @@
 <p>
   login works!
+  <IonPage>
+    <IonContent>
+      <ion-list>
+        <IonLabel>Enter E-mail Adddress</IonLabel>
+        <ion-input type="email"></ion-input>
+        <IonLabel>Enter Password</IonLabel>
+        <ion-input type="Password"></ion-input>
+        <button ion-button (click)="signIn()" type="submit" block>submit</button>
+      </ion-list>
+      <h1 ngIf="auth.isLoggedIn()">login</h1>
+    </IonContent>
+  <IonPage>
 </p>
