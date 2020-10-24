@@ -1,11 +1,14 @@
 <p>
   login works!
       <ion-list>
+        <h1 *ngIf="auth.isLoggedIn()">You are signed in as {{auth.getUserData().email}}!</h1>
+        <button (click)="signInWithGoogle()">Sign In with Google</button>
         <IonLabel>Enter E-mail Adddress</IonLabel>
-        <ion-input type="email"></ion-input>
+        <ion-input [(ngModel)]="email" type="email"></ion-input>
         <IonLabel>Enter Password</IonLabel>
-        <ion-input type="Password"></ion-input>
+        <ion-input [(ngModel)]="password" type="Password"></ion-input>
         <button ion-button (click)="signIn()" type="submit" block>submit</button>
+        <a routerLink="/user-benefits">Click Here</a>
       </ion-list>
-      <h1 ngIf="auth.isLoggedIn()">login</h1>
+      <h1 *ngIf="auth.isLoggedIn()">login</h1>
 </p>
